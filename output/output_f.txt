@@ -1,0 +1,96 @@
+#####     Answer      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+Máy bay VJ1. 
+
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+Máy bay VN1. Cất cánh lúc 10:00HR. 
+Máy bay VJ3. Cất cánh lúc 9:45HR. 
+Máy bay VN3. Cất cánh lúc 4:30HR. 
+Máy bay VN5. Cất cánh lúc 17:00HR. 
+Máy bay VJ4. Cất cánh lúc 8:30HR. 
+
+------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+Máy bay VN3. 
+
+------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+Không. 
+
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+Thời gian bay là 0:45. 
+
+------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+Thời gian bay là 0:45. 
+
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+Máy bay VJ1. 
+Máy bay VN4. 
+Máy bay VJ5. 
+
+------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+Máy bay VN1. 
+Máy bay VJ1. 
+
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+Thời gian bay là 1:00. 
+
+------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+Thời gian bay là 2:00. 
+
+------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+Có. 
+
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+Máy bay VJ1. Cất cánh lúc 12:30HR. 
+Máy bay VN4. Cất cánh lúc 9:30HR. 
+Máy bay VJ5. Cất cánh lúc 9:00. 
+
+------------------------------
+
+

@@ -1,0 +1,75 @@
+#####     Logical Form      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+(WH QUERY(& (ĐẾN s1) (AGENT s1 (WHICH m1 MÁY_BAY)) (THEME s1 (NAME h1 "HUẾ")) (AT_TIME s1 13:30HR)))
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+(WH QUERY(& (AT_TIME s1 (WHEN s1 TIME)) (XUẤT_PHÁT s1) (EXPERIENCER s1 (WHICH m1 MÁY_BAY)) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH"))))
+------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+(WH QUERY(& (BAY s1) (EXPERIENCER s1 (WHICH m1 MÁY_BAY)) (TO_LOC tl s1 (NAME h1 "HÀ_NỘI")) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH"))))
+------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+(YS QUERY(& (XUẤT_PHÁT s1) (EXPERIENCER s1 (ID VN4 MÁY_BAY)) (FROM_LOC fl s1 (NAME đ1 "ĐÀ_NẴNG"))))
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (BAY s1) (EXPERIENCER s1 THỜI_GIAN) (FROM_LOC fl s1 (NAME h1 "HÀ_NỘI")) (NMOD THỜI_GIAN (ID VJ5 MÁY_BAY)) (TO_LOC tl s1 (NAME k1 "KHÁNH_HÒA"))))
+------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (BAY s1) (EXPERIENCER s1 THỜI_GIAN) (NMOD THỜI_GIAN (ID VN5 MÁY_BAY)) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH")) (TO_LOC tl s1 (NAME k1 "KHÁNH_HÒA"))))
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+(WH QUERY(& (XUẤT_PHÁT s1) (EXPERIENCER s1 (WHICH m1 MÁY_BAY)) (FROM_LOC fl s1 (NAME h1 "HÀ_NỘI"))))
+------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+(WH QUERY(& (ĐẾN s1) (AGENT s1 (WHICH m1 MÁY_BAY)) (THEME s1 (NAME h1 "HUẾ"))))
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (BAY s1) (EXPERIENCER s1 THỜI_GIAN) (TO_LOC tl s1 (NAME đ1 "ĐÀ_NẴNG")) (NMOD THỜI_GIAN (ID VJ4 MÁY_BAY)) (FROM_LOC fl s1 (NAME h1 "HỒ_CHÍ_MINH"))))
+------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+(WH QUERY(& (RUN_TIME s1 (WHAT s1 TIME)) (BAY s1) (EXPERIENCER s1 THỜI_GIAN) (FROM_LOC fl s1 (NAME h1 "HÀ_NỘI")) (TO_LOC tl s1 (NAME đ1 "ĐÀ_NẴNG")) (NMOD THỜI_GIAN (ID VN4 MÁY_BAY))))
+------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+(YS QUERY(& (XUẤT_PHÁT s1) (EXPERIENCER s1 (ID VJ2 MÁY_BAY)) (FROM_LOC fl s1 (NAME đ1 "ĐÀ_NẴNG"))))
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+(WH QUERY(& (AT_TIME s1 (WHEN s1 TIME)) (XUẤT_PHÁT s1) (EXPERIENCER s1 (WHICH m1 MÁY_BAY)) (FROM_LOC fl s1 (NAME h1 "HÀ_NỘI"))))
+------------------------------
+
+

@@ -1,0 +1,123 @@
+#####     Grammatical Relation      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 PRED ĐẾN)
+(s1 LSUBJ MÁY_BAY)
+(s1 LOBJ (NAME h1 "HUẾ"))
+(s1 TIME 13:30HR)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 WHQUERY (WHEN s1 TIME))
+(s1 PRED XUẤT_PHÁT)
+(s1 LSUBJ MÁY_BAY)
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
+-------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 PRED BAY)
+(s1 LSUBJ MÁY_BAY)
+(s1 PTO (NAME h1 "HÀ_NỘI"))
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
+-------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+(s1 YNQUERY XUẤT_PHÁT)
+(s1 PRED XUẤT_PHÁT)
+(s1 LSUBJ (ID VN4 MÁY_BAY))
+(s1 PFROM (NAME đ1 "ĐÀ_NẴNG"))
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+(s1 WHQUERY (WHAT s1 TIME))
+(s1 PRED BAY)
+(s1 LSUBJ THỜI_GIAN)
+(s1 PFROM (NAME h1 "HÀ_NỘI"))
+(THỜI_GIAN NMOD (ID VJ5 MÁY_BAY))
+(s1 PTO (NAME k1 "KHÁNH_HÒA"))
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+(s1 WHQUERY (WHAT s1 TIME))
+(s1 PRED BAY)
+(s1 LSUBJ THỜI_GIAN)
+(THỜI_GIAN NMOD (ID VN5 MÁY_BAY))
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
+(s1 PTO (NAME k1 "KHÁNH_HÒA"))
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 PRED XUẤT_PHÁT)
+(s1 LSUBJ MÁY_BAY)
+(s1 PFROM (NAME h1 "HÀ_NỘI"))
+-------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 PRED ĐẾN)
+(s1 LSUBJ MÁY_BAY)
+(s1 LOBJ (NAME h1 "HUẾ"))
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+(s1 WHQUERY (WHAT s1 TIME))
+(s1 PRED BAY)
+(s1 LSUBJ THỜI_GIAN)
+(s1 PTO (NAME đ1 "ĐÀ_NẴNG"))
+(THỜI_GIAN NMOD (ID VJ4 MÁY_BAY))
+(s1 PFROM (NAME h1 "HỒ_CHÍ_MINH"))
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+(s1 WHQUERY (WHAT s1 TIME))
+(s1 PRED BAY)
+(s1 LSUBJ THỜI_GIAN)
+(s1 PFROM (NAME h1 "HÀ_NỘI"))
+(s1 PTO (NAME đ1 "ĐÀ_NẴNG"))
+(THỜI_GIAN NMOD (ID VN4 MÁY_BAY))
+-------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+(s1 YNQUERY XUẤT_PHÁT)
+(s1 PRED XUẤT_PHÁT)
+(s1 LSUBJ (ID VJ2 MÁY_BAY))
+(s1 PFROM (NAME đ1 "ĐÀ_NẴNG"))
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+(s1 WHQUERY (WHICH m1 MÁY_BAY))
+(s1 WHQUERY (WHEN s1 TIME))
+(s1 PRED XUẤT_PHÁT)
+(s1 LSUBJ MÁY_BAY)
+(s1 PFROM (NAME h1 "HÀ_NỘI"))
+-------------------------------
+
+

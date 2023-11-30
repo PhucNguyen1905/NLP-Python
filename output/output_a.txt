@@ -1,0 +1,289 @@
+#####     Dependency Parsing      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'đến', 'thành_phố', 'huế', 'lúc', '13:30hr', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['đến', 'thành_phố', 'huế', 'lúc', '13:30hr', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['đến', 'thành_phố', 'huế', 'lúc', '13:30hr', '?']	
+LEFTARC	['Root']	['đến', 'thành_phố', 'huế', 'lúc', '13:30hr', '?']	(subj, đến, máy_bay)
+RIGHTARC	['Root', 'đến']	['thành_phố', 'huế', 'lúc', '13:30hr', '?']	(root, Root, đến)
+RIGHTARC	['Root', 'đến', 'thành_phố']	['huế', 'lúc', '13:30hr', '?']	(dobj, đến, thành_phố)
+RIGHTARC	['Root', 'đến', 'thành_phố', 'huế']	['lúc', '13:30hr', '?']	(namemod, thành_phố, huế)
+REDUCE	['Root', 'đến', 'thành_phố']	['lúc', '13:30hr', '?']	
+REDUCE	['Root', 'đến']	['lúc', '13:30hr', '?']	
+RIGHTARC	['Root', 'đến', 'lúc']	['13:30hr', '?']	(aux, đến, lúc)
+RIGHTARC	['Root', 'đến', 'lúc', '13:30hr']	['?']	(timemod, lúc, 13:30hr)
+REDUCE	['Root', 'đến', 'lúc']	['?']	
+REDUCE	['Root', 'đến']	['?']	
+RIGHTARC	['Root', 'đến', '?']	[]	(punc, đến, ?)
+
+(whmod, máy_bay, nào) (subj, đến, máy_bay) (root, Root, đến) (dobj, đến, thành_phố) (namemod, thành_phố, huế) (aux, đến, lúc) (timemod, lúc, 13:30hr) (punc, đến, ?)
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'xuất_phát', 'từ', 'thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['xuất_phát', 'từ', 'thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['xuất_phát', 'từ', 'thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['xuất_phát', 'từ', 'thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	(subj, xuất_phát, máy_bay)
+RIGHTARC	['Root', 'xuất_phát']	['từ', 'thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	(root, Root, xuất_phát)
+RIGHTARC	['Root', 'xuất_phát', 'từ']	['thành_phố', 'hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	(pmod, xuất_phát, từ)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'thành_phố']	['hồ_chí_minh', ',', 'lúc', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'thành_phố', 'hồ_chí_minh']	[',', 'lúc', 'mấy_giờ', '?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'xuất_phát', 'từ', 'thành_phố']	[',', 'lúc', 'mấy_giờ', '?']	
+REDUCE	['Root', 'xuất_phát', 'từ']	[',', 'lúc', 'mấy_giờ', '?']	
+REDUCE	['Root', 'xuất_phát']	[',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'xuất_phát', ',']	['lúc', 'mấy_giờ', '?']	(punc, xuất_phát, ,)
+REDUCE	['Root', 'xuất_phát']	['lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'xuất_phát', 'lúc']	['mấy_giờ', '?']	(aux, xuất_phát, lúc)
+RIGHTARC	['Root', 'xuất_phát', 'lúc', 'mấy_giờ']	['?']	(whmod, lúc, mấy_giờ)
+REDUCE	['Root', 'xuất_phát', 'lúc']	['?']	
+REDUCE	['Root', 'xuất_phát']	['?']	
+RIGHTARC	['Root', 'xuất_phát', '?']	[]	(punc, xuất_phát, ?)
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (punc, xuất_phát, ,) (aux, xuất_phát, lúc) (whmod, lúc, mấy_giờ) (punc, xuất_phát, ?)
+------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	
+LEFTARC	['Root']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(subj, bay, máy_bay)
+RIGHTARC	['Root', 'bay']	['từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(root, Root, bay)
+RIGHTARC	['Root', 'bay', 'từ']	['thành_phố', 'hồ_chí_minh', 'đến', 'hà_nội', '?']	(pmod, bay, từ)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố']	['hồ_chí_minh', 'đến', 'hà_nội', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh']	['đến', 'hà_nội', '?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'bay', 'từ', 'thành_phố']	['đến', 'hà_nội', '?']	
+REDUCE	['Root', 'bay', 'từ']	['đến', 'hà_nội', '?']	
+REDUCE	['Root', 'bay']	['đến', 'hà_nội', '?']	
+RIGHTARC	['Root', 'bay', 'đến']	['hà_nội', '?']	(pmod, bay, đến)
+RIGHTARC	['Root', 'bay', 'đến', 'hà_nội']	['?']	(pobj, đến, hà_nội)
+REDUCE	['Root', 'bay', 'đến']	['?']	
+REDUCE	['Root', 'bay']	['?']	
+RIGHTARC	['Root', 'bay', '?']	[]	(punc, bay, ?)
+
+(whmod, máy_bay, nào) (subj, bay, máy_bay) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, hà_nội) (punc, bay, ?)
+------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+SHIFT	['Root', 'máy_bay']	['vn4', 'có', 'xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+RIGHTARC	['Root', 'máy_bay', 'vn4']	['có', 'xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(idmod, máy_bay, vn4)
+SHIFT	['Root', 'máy_bay', 'vn4', 'có']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root', 'máy_bay', 'vn4']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(aux, xuất_phát, có)
+REDUCE	['Root', 'máy_bay']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(subj, xuất_phát, máy_bay)
+RIGHTARC	['Root', 'xuất_phát']	['từ', 'đà_nẵng', 'không', '?']	(root, Root, xuất_phát)
+RIGHTARC	['Root', 'xuất_phát', 'từ']	['đà_nẵng', 'không', '?']	(pmod, xuất_phát, từ)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'đà_nẵng']	['không', '?']	(pobj, từ, đà_nẵng)
+REDUCE	['Root', 'xuất_phát', 'từ']	['không', '?']	
+REDUCE	['Root', 'xuất_phát']	['không', '?']	
+RIGHTARC	['Root', 'xuất_phát', 'không']	['?']	(aux, xuất_phát, không)
+REDUCE	['Root', 'xuất_phát']	['?']	
+RIGHTARC	['Root', 'xuất_phát', '?']	[]	(punc, xuất_phát, ?)
+
+(idmod, máy_bay, vn4) (aux, xuất_phát, có) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, đà_nẵng) (aux, xuất_phát, không) (punc, xuất_phát, ?)
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+SHIFT	['Root', 'thời_gian']	['máy_bay', 'vj5', 'bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'thời_gian', 'máy_bay']	['vj5', 'bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(nmod, thời_gian, máy_bay)
+RIGHTARC	['Root', 'thời_gian', 'máy_bay', 'vj5']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(idmod, máy_bay, vj5)
+REDUCE	['Root', 'thời_gian', 'máy_bay']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'thời_gian']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(subj, bay, thời_gian)
+RIGHTARC	['Root', 'bay']	['từ', 'thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(root, Root, bay)
+RIGHTARC	['Root', 'bay', 'từ']	['thành_phố', 'hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(pmod, bay, từ)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố']	['hà_nội', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố', 'hà_nội']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(namemod, thành_phố, hà_nội)
+REDUCE	['Root', 'bay', 'từ', 'thành_phố']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay', 'từ']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'đến']	['khánh_hòa', 'mất', 'mấy_giờ', '?']	(pmod, bay, đến)
+RIGHTARC	['Root', 'bay', 'đến', 'khánh_hòa']	['mất', 'mấy_giờ', '?']	(pobj, đến, khánh_hòa)
+REDUCE	['Root', 'bay', 'đến']	['mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'mất']	['mấy_giờ', '?']	(aux, bay, mất)
+RIGHTARC	['Root', 'bay', 'mất', 'mấy_giờ']	['?']	(whmod, mất, mấy_giờ)
+REDUCE	['Root', 'bay', 'mất']	['?']	
+REDUCE	['Root', 'bay']	['?']	
+RIGHTARC	['Root', 'bay', '?']	[]	(punc, bay, ?)
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vj5) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (pmod, bay, đến) (pobj, đến, khánh_hòa) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+SHIFT	['Root', 'thời_gian']	['máy_bay', 'vn5', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'thời_gian', 'máy_bay']	['vn5', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(nmod, thời_gian, máy_bay)
+RIGHTARC	['Root', 'thời_gian', 'máy_bay', 'vn5']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(idmod, máy_bay, vn5)
+REDUCE	['Root', 'thời_gian', 'máy_bay']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'thời_gian']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(subj, bay, thời_gian)
+RIGHTARC	['Root', 'bay']	['từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(root, Root, bay)
+RIGHTARC	['Root', 'bay', 'từ']	['thành_phố', 'hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(pmod, bay, từ)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố']	['hồ_chí_minh', 'đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'bay', 'từ', 'thành_phố']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay', 'từ']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['đến', 'khánh_hòa', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'đến']	['khánh_hòa', 'mất', 'mấy_giờ', '?']	(pmod, bay, đến)
+RIGHTARC	['Root', 'bay', 'đến', 'khánh_hòa']	['mất', 'mấy_giờ', '?']	(pobj, đến, khánh_hòa)
+REDUCE	['Root', 'bay', 'đến']	['mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'mất']	['mấy_giờ', '?']	(aux, bay, mất)
+RIGHTARC	['Root', 'bay', 'mất', 'mấy_giờ']	['?']	(whmod, mất, mấy_giờ)
+REDUCE	['Root', 'bay', 'mất']	['?']	
+REDUCE	['Root', 'bay']	['?']	
+RIGHTARC	['Root', 'bay', '?']	[]	(punc, bay, ?)
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vn5) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, khánh_hòa) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'xuất_phát', 'từ', 'hà_nội', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['xuất_phát', 'từ', 'hà_nội', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['xuất_phát', 'từ', 'hà_nội', '?']	
+LEFTARC	['Root']	['xuất_phát', 'từ', 'hà_nội', '?']	(subj, xuất_phát, máy_bay)
+RIGHTARC	['Root', 'xuất_phát']	['từ', 'hà_nội', '?']	(root, Root, xuất_phát)
+RIGHTARC	['Root', 'xuất_phát', 'từ']	['hà_nội', '?']	(pmod, xuất_phát, từ)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'hà_nội']	['?']	(pobj, từ, hà_nội)
+REDUCE	['Root', 'xuất_phát', 'từ']	['?']	
+REDUCE	['Root', 'xuất_phát']	['?']	
+RIGHTARC	['Root', 'xuất_phát', '?']	[]	(punc, xuất_phát, ?)
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, hà_nội) (punc, xuất_phát, ?)
+------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'đến', 'thành_phố', 'huế', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['đến', 'thành_phố', 'huế', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['đến', 'thành_phố', 'huế', '?']	
+LEFTARC	['Root']	['đến', 'thành_phố', 'huế', '?']	(subj, đến, máy_bay)
+RIGHTARC	['Root', 'đến']	['thành_phố', 'huế', '?']	(root, Root, đến)
+RIGHTARC	['Root', 'đến', 'thành_phố']	['huế', '?']	(dobj, đến, thành_phố)
+RIGHTARC	['Root', 'đến', 'thành_phố', 'huế']	['?']	(namemod, thành_phố, huế)
+REDUCE	['Root', 'đến', 'thành_phố']	['?']	
+REDUCE	['Root', 'đến']	['?']	
+RIGHTARC	['Root', 'đến', '?']	[]	(punc, đến, ?)
+
+(whmod, máy_bay, nào) (subj, đến, máy_bay) (root, Root, đến) (dobj, đến, thành_phố) (namemod, thành_phố, huế) (punc, đến, ?)
+------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+SHIFT	['Root', 'thời_gian']	['máy_bay', 'vj4', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'thời_gian', 'máy_bay']	['vj4', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(nmod, thời_gian, máy_bay)
+RIGHTARC	['Root', 'thời_gian', 'máy_bay', 'vj4']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(idmod, máy_bay, vj4)
+REDUCE	['Root', 'thời_gian', 'máy_bay']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'thời_gian']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['bay', 'từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(subj, bay, thời_gian)
+RIGHTARC	['Root', 'bay']	['từ', 'thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(root, Root, bay)
+RIGHTARC	['Root', 'bay', 'từ']	['thành_phố', 'hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(pmod, bay, từ)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố']	['hồ_chí_minh', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố', 'hồ_chí_minh']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(namemod, thành_phố, hồ_chí_minh)
+REDUCE	['Root', 'bay', 'từ', 'thành_phố']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay', 'từ']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'đến']	['đà_nẵng', 'mất', 'mấy_giờ', '?']	(pmod, bay, đến)
+RIGHTARC	['Root', 'bay', 'đến', 'đà_nẵng']	['mất', 'mấy_giờ', '?']	(pobj, đến, đà_nẵng)
+REDUCE	['Root', 'bay', 'đến']	['mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'mất']	['mấy_giờ', '?']	(aux, bay, mất)
+RIGHTARC	['Root', 'bay', 'mất', 'mấy_giờ']	['?']	(whmod, mất, mấy_giờ)
+REDUCE	['Root', 'bay', 'mất']	['?']	
+REDUCE	['Root', 'bay']	['?']	
+RIGHTARC	['Root', 'bay', '?']	[]	(punc, bay, ?)
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vj4) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, đà_nẵng) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+SHIFT	['Root', 'thời_gian']	['máy_bay', 'vn4', 'bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'thời_gian', 'máy_bay']	['vn4', 'bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(nmod, thời_gian, máy_bay)
+RIGHTARC	['Root', 'thời_gian', 'máy_bay', 'vn4']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(idmod, máy_bay, vn4)
+REDUCE	['Root', 'thời_gian', 'máy_bay']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'thời_gian']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['bay', 'từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(subj, bay, thời_gian)
+RIGHTARC	['Root', 'bay']	['từ', 'thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(root, Root, bay)
+RIGHTARC	['Root', 'bay', 'từ']	['thành_phố', 'hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(pmod, bay, từ)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố']	['hà_nội', 'đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'bay', 'từ', 'thành_phố', 'hà_nội']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	(namemod, thành_phố, hà_nội)
+REDUCE	['Root', 'bay', 'từ', 'thành_phố']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay', 'từ']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['đến', 'đà_nẵng', 'mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'đến']	['đà_nẵng', 'mất', 'mấy_giờ', '?']	(pmod, bay, đến)
+RIGHTARC	['Root', 'bay', 'đến', 'đà_nẵng']	['mất', 'mấy_giờ', '?']	(pobj, đến, đà_nẵng)
+REDUCE	['Root', 'bay', 'đến']	['mất', 'mấy_giờ', '?']	
+REDUCE	['Root', 'bay']	['mất', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'bay', 'mất']	['mấy_giờ', '?']	(aux, bay, mất)
+RIGHTARC	['Root', 'bay', 'mất', 'mấy_giờ']	['?']	(whmod, mất, mấy_giờ)
+REDUCE	['Root', 'bay', 'mất']	['?']	
+REDUCE	['Root', 'bay']	['?']	
+RIGHTARC	['Root', 'bay', '?']	[]	(punc, bay, ?)
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vn4) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (pmod, bay, đến) (pobj, đến, đà_nẵng) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+SHIFT	['Root', 'máy_bay']	['vj2', 'có', 'xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+RIGHTARC	['Root', 'máy_bay', 'vj2']	['có', 'xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(idmod, máy_bay, vj2)
+SHIFT	['Root', 'máy_bay', 'vj2', 'có']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root', 'máy_bay', 'vj2']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(aux, xuất_phát, có)
+REDUCE	['Root', 'máy_bay']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	
+LEFTARC	['Root']	['xuất_phát', 'từ', 'đà_nẵng', 'không', '?']	(subj, xuất_phát, máy_bay)
+RIGHTARC	['Root', 'xuất_phát']	['từ', 'đà_nẵng', 'không', '?']	(root, Root, xuất_phát)
+RIGHTARC	['Root', 'xuất_phát', 'từ']	['đà_nẵng', 'không', '?']	(pmod, xuất_phát, từ)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'đà_nẵng']	['không', '?']	(pobj, từ, đà_nẵng)
+REDUCE	['Root', 'xuất_phát', 'từ']	['không', '?']	
+REDUCE	['Root', 'xuất_phát']	['không', '?']	
+RIGHTARC	['Root', 'xuất_phát', 'không']	['?']	(aux, xuất_phát, không)
+REDUCE	['Root', 'xuất_phát']	['?']	
+RIGHTARC	['Root', 'xuất_phát', '?']	[]	(punc, xuất_phát, ?)
+
+(idmod, máy_bay, vj2) (aux, xuất_phát, có) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, đà_nẵng) (aux, xuất_phát, không) (punc, xuất_phát, ?)
+------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+SHIFT	['Root', 'máy_bay']	['nào', 'xuất_phát', 'từ', 'thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'máy_bay', 'nào']	['xuất_phát', 'từ', 'thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	(whmod, máy_bay, nào)
+REDUCE	['Root', 'máy_bay']	['xuất_phát', 'từ', 'thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	
+LEFTARC	['Root']	['xuất_phát', 'từ', 'thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	(subj, xuất_phát, máy_bay)
+RIGHTARC	['Root', 'xuất_phát']	['từ', 'thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	(root, Root, xuất_phát)
+RIGHTARC	['Root', 'xuất_phát', 'từ']	['thành_phố', 'hà_nội', ',', 'lúc', 'mấy_giờ', '?']	(pmod, xuất_phát, từ)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'thành_phố']	['hà_nội', ',', 'lúc', 'mấy_giờ', '?']	(pobj, từ, thành_phố)
+RIGHTARC	['Root', 'xuất_phát', 'từ', 'thành_phố', 'hà_nội']	[',', 'lúc', 'mấy_giờ', '?']	(namemod, thành_phố, hà_nội)
+REDUCE	['Root', 'xuất_phát', 'từ', 'thành_phố']	[',', 'lúc', 'mấy_giờ', '?']	
+REDUCE	['Root', 'xuất_phát', 'từ']	[',', 'lúc', 'mấy_giờ', '?']	
+REDUCE	['Root', 'xuất_phát']	[',', 'lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'xuất_phát', ',']	['lúc', 'mấy_giờ', '?']	(punc, xuất_phát, ,)
+REDUCE	['Root', 'xuất_phát']	['lúc', 'mấy_giờ', '?']	
+RIGHTARC	['Root', 'xuất_phát', 'lúc']	['mấy_giờ', '?']	(aux, xuất_phát, lúc)
+RIGHTARC	['Root', 'xuất_phát', 'lúc', 'mấy_giờ']	['?']	(whmod, lúc, mấy_giờ)
+REDUCE	['Root', 'xuất_phát', 'lúc']	['?']	
+REDUCE	['Root', 'xuất_phát']	['?']	
+RIGHTARC	['Root', 'xuất_phát', '?']	[]	(punc, xuất_phát, ?)
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (punc, xuất_phát, ,) (aux, xuất_phát, lúc) (whmod, lúc, mấy_giờ) (punc, xuất_phát, ?)
+------------------------------
+
+

@@ -1,0 +1,75 @@
+#####     Procedure Semantics      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+PRINT-ALL ?p (PLANE ?p) (ATIME ?p HUE 13:30HR)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+PRINT-ALL ?p (PLANE ?p) ?st (STIME ?st) (DTIME ?p HCM ?st)
+-------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+PRINT-ALL ?p (PLANE ?p) (ATIME ?p HN ?dt) (DTIME ?p HCM ?st)
+-------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+YES-NO (DTIME VN4 ĐN ?st)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+PRINT-ALL ?rt (RUN_TIME ?rt) (RUN-TIME VJ5 HN KH ?rt) (ATIME VJ5 KH ?dt) (DTIME VJ5 HN ?st)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+PRINT-ALL ?rt (RUN_TIME ?rt) (RUN-TIME VN5 HCM KH ?rt) (ATIME VN5 KH ?dt) (DTIME VN5 HCM ?st)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+PRINT-ALL ?p (PLANE ?p) (DTIME ?p HN ?st)
+-------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+PRINT-ALL ?p (PLANE ?p) (ATIME ?p HUE ?dt)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+PRINT-ALL ?rt (RUN_TIME ?rt) (RUN-TIME VJ4 HCM ĐN ?rt) (ATIME VJ4 ĐN ?dt) (DTIME VJ4 HCM ?st)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+PRINT-ALL ?rt (RUN_TIME ?rt) (RUN-TIME VN4 HN ĐN ?rt) (ATIME VN4 ĐN ?dt) (DTIME VN4 HN ?st)
+-------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+YES-NO (DTIME VJ2 ĐN ?st)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+PRINT-ALL ?p (PLANE ?p) ?st (STIME ?st) (DTIME ?p HN ?st)
+-------------------------------
+
+

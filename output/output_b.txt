@@ -1,0 +1,75 @@
+#####     Relations Of Each Query      #####
+
+
+----- Q: Máy bay nào đến thành phố Huế lúc 13:30HR? -----
+
+(whmod, máy_bay, nào) (subj, đến, máy_bay) (root, Root, đến) (dobj, đến, thành_phố) (namemod, thành_phố, huế) (aux, đến, lúc) (timemod, lúc, 13:30hr) (punc, đến, ?)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP.Hồ Chí Minh, lúc mấy giờ? -----
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (punc, xuất_phát, ,) (aux, xuất_phát, lúc) (whmod, lúc, mấy_giờ) (punc, xuất_phát, ?)
+-------------------------------
+
+
+----- Q: Máy bay nào bay từ TP.Hồ Chí Minh đến Hà Nội? -----
+
+(whmod, máy_bay, nào) (subj, bay, máy_bay) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, hà_nội) (punc, bay, ?)
+-------------------------------
+
+
+----- Q: Máy bay VN4 có xuất phát từ Đà Nẵng không? -----
+
+(idmod, máy_bay, vn4) (aux, xuất_phát, có) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, đà_nẵng) (aux, xuất_phát, không) (punc, xuất_phát, ?)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ5 bay từ TP. Hà Nội đến Khánh Hòa mất mấy giờ? -----
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vj5) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (pmod, bay, đến) (pobj, đến, khánh_hòa) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN5 bay từ TP. Hồ Chí Minh đến Khánh Hòa mất mấy giờ? -----
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vn5) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, khánh_hòa) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ Hà Nội? -----
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, hà_nội) (punc, xuất_phát, ?)
+-------------------------------
+
+
+----- Q: Máy bay nào đến thành phố Huế? -----
+
+(whmod, máy_bay, nào) (subj, đến, máy_bay) (root, Root, đến) (dobj, đến, thành_phố) (namemod, thành_phố, huế) (punc, đến, ?)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VJ4 bay từ TP. Hồ Chí Minh đến Đà Nẵng mất mấy giờ? -----
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vj4) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hồ_chí_minh) (pmod, bay, đến) (pobj, đến, đà_nẵng) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+-------------------------------
+
+
+----- Q: Thời gian máy bay VN4 bay từ TP. Hà Nội đến Đà Nẵng mất mấy giờ? -----
+
+(nmod, thời_gian, máy_bay) (idmod, máy_bay, vn4) (subj, bay, thời_gian) (root, Root, bay) (pmod, bay, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (pmod, bay, đến) (pobj, đến, đà_nẵng) (aux, bay, mất) (whmod, mất, mấy_giờ) (punc, bay, ?)
+-------------------------------
+
+
+----- Q: Máy bay VJ2 có xuất phát từ Đà Nẵng không? -----
+
+(idmod, máy_bay, vj2) (aux, xuất_phát, có) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, đà_nẵng) (aux, xuất_phát, không) (punc, xuất_phát, ?)
+-------------------------------
+
+
+----- Q: Máy bay nào xuất phát từ TP. Hà Nội, lúc mấy giờ? -----
+
+(whmod, máy_bay, nào) (subj, xuất_phát, máy_bay) (root, Root, xuất_phát) (pmod, xuất_phát, từ) (pobj, từ, thành_phố) (namemod, thành_phố, hà_nội) (punc, xuất_phát, ,) (aux, xuất_phát, lúc) (whmod, lúc, mấy_giờ) (punc, xuất_phát, ?)
+-------------------------------
+
+
